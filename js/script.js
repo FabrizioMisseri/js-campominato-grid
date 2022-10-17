@@ -15,6 +15,8 @@ const playBtn = document.getElementById("play-btn");
 // Aggiungo effetto al click del bottone start-play; con un IF-composto riesco a generare differenti tabelloni in base alla difficoltà
 playBtn.addEventListener("click", function() {
 
+    playBtn.innerHTML = "RESTART";
+
     if (diffMode.value === "easy") {
         container.innerHTML = ("");
         array = scoreBoard(100);
