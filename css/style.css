@@ -46,7 +46,7 @@ main {
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    width: 60%;
+    width: 50%;
     height: 90%;
     background-color: aquamarine;
     /* debug */
