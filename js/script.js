@@ -57,6 +57,15 @@ function cardGenerator(numIndex) {
     const card = document.createElement("div");
     card.classList.add("card");
     card.classList.add("white");
+
+    if (diffMode.value === "easy") {
+        card.classList.add("X10");
+    } else if (diffMode.value === "normal") {
+        card.classList.add("X9");
+    } else if (diffMode.value === "hard") {
+        card.classList.add("X7");
+    }
+
     card.innerHTML = `${numIndex}`;
     return card;
 }

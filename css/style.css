@@ -63,13 +63,25 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: calc(100% / 10);
-    height: calc(100% / 10);
     border: 1px solid black;
     cursor: pointer;
     background-color: white;
 }
 
+.X10{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
+
+.X9{
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+.X7{
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+}
 
 .card.bg-green{
     background-color: green;
