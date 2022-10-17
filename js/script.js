@@ -6,13 +6,14 @@
 
 const container = document.querySelector(".container");
 
-let array;
+let array = [];
 
 const playBtn = document.getElementById("play-btn");
 
 playBtn.addEventListener("click", function() {
 
-    array = [];
+    container.innerHTML = ("");
+
     array = scoreBoard(100);
 
 })
@@ -24,7 +25,7 @@ playBtn.addEventListener("click", function() {
 
 
 
-/**
+/** SCOREBOARD
  * Description: genera un tabellone pieno di carte
  * @param {number} num numero di carte da inserire
  * @returns {object}
@@ -38,7 +39,7 @@ function scoreBoard(num) {
 }
 
 
-/**
+/** CARD GENERATOR
  * Description: genera una carta con tutte le features connesse
  * @param {number} numIndex
  * @returns {object}
@@ -52,12 +53,12 @@ function cardGenerator(numIndex) {
 }
 
 
-/**
+/** CLICK ACTIONS
  * Description: genera una serie di eventi al click del mouse
  * @param {} 
  * @returns {?}
  */
 function clickAction() {
     this.classList.add("bg-green");
-    alert(this.innerHTML);
+    console.log(this.innerHTML);
 }
