@@ -4,16 +4,15 @@
 // Ci saranno quindi 10 caselle per ognuna delle 10 righe.
 // Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata.
 
-const container = document.querySelector(".container");
 
+// inizializzo l' array vuoto
 let array = [];
-
+// seleziono il container, le differenti modalità di difficoltà, e il btn di start-play
+const container = document.querySelector(".container");
 const diffMode = document.getElementById("difficulty-mode");
-
 const playBtn = document.getElementById("play-btn");
 
-
-
+// Aggiungo effetto al click del bottone start-play; con un IF-composto riesco a generare differenti tabelloni in base alla difficoltà
 playBtn.addEventListener("click", function() {
 
     if (diffMode.value === "easy") {
@@ -28,8 +27,6 @@ playBtn.addEventListener("click", function() {
     }
 
 })
-
-
 
 
 // FUNCTIONS
