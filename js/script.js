@@ -17,11 +17,7 @@ for (let i = 0; i < scoreBoardArray.length; i++) {
     card.classList.add("card");
     card.classList.add("bg-white");
     
-    card.addEventListener ("click", function() {
-        card.classList.remove("bg-white");
-        card.classList.add("bg-green");
-        alert(`${scoreBoardArray[i]}`);
-    })
+    card.addEventListener ("click", clickAlertColor);
     
     container.append(card); 
     card.innerHTML = `${scoreBoardArray[i]}`;
@@ -59,4 +55,14 @@ function setOfRndNumbers(maxNum) {
         }
     }
     return numbersArray;
+}
+
+/**
+ * Description: al click del mouse la casella diventa verde e restituisce il numCella dentro un alert
+ * @returns {?}
+ */
+function clickAlertColor() {
+    this.classList.remove("bg-white");
+    this.classList.add("bg-green");
+    return alert(this.innerHTML);
 }
