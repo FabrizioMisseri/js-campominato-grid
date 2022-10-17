@@ -31,6 +31,7 @@ header{
     background-color: aquamarine;
     color: rgb(208, 38, 214);
     font-weight: 1000;
+    cursor: pointer;
 }
 
 main {

@@ -6,9 +6,16 @@
 
 const container = document.querySelector(".container");
 
-const array = [];
+let array;
 
-array = scoreBoard(100);
+const playBtn = document.getElementById("play-btn");
+
+playBtn.addEventListener("click", function() {
+
+    array = [];
+    array = scoreBoard(100);
+
+})
 
 
 
