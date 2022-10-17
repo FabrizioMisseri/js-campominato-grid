@@ -59,12 +59,10 @@ main {
     height: calc(100% / 10);
     border: 1px solid black;
     cursor: pointer;
-}
-
-.bg-white{
     background-color: white;
 }
 
-.bg-green{
+
+.card.bg-green{
     background-color: green;
 }

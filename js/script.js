@@ -4,65 +4,53 @@
 // Ci saranno quindi 10 caselle per ognuna delle 10 righe.
 // Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata.
 
-
-// seleziono il container
 const container = document.querySelector(".container");
 
-// generato array con 100 numeri casuali diversi
-const scoreBoardArray = setOfRndNumbers(100);
+const array = [];
 
-// ciclo for che scorre tutto l' array e genera le cards
-for (let i = 0; i < scoreBoardArray.length; i++) {
-    let card = document.createElement("div");
-    card.classList.add("card");
-    card.classList.add("bg-white");
-    
-    card.addEventListener ("click", clickAlertColor);
-    
-    container.append(card); 
-    card.innerHTML = `${scoreBoardArray[i]}`;
-}  
+array = scoreBoard(100);
 
 
 
 
+// FUNCTIONS
 
-//FUNCTIONS
 
 
 /**
- * Description: restituisce un numero randomico tra un numero minimo e un numero massimo
- * @param {number} min
- * @param {number} max
- * @returns {number}
- */
-function rndNumbers (min,max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-
-/**
- * Description: restituisce un array contenente numeri interi random da uno a MAX
- * @param {number} maxNum
+ * Description: genera un tabellone pieno di carte
+ * @param {number} num numero di carte da inserire
  * @returns {object}
  */
-function setOfRndNumbers(maxNum) {
-    const numbersArray = [];
-    while (numbersArray.length < maxNum) {
-        let number = rndNumbers(1, maxNum);
-        if (!numbersArray.includes(number)) {
-            numbersArray.push(number);
-        }
+function scoreBoard(num) {
+    for (let i = 1; i <= num; i++) {
+        const card = cardGenerator(i);
+        container.append(card);
+        card.addEventListener ("click", clickAction);
     }
-    return numbersArray;
 }
 
+
 /**
- * Description: al click del mouse la casella diventa verde e restituisce il numCella dentro un alert
+ * Description: genera una carta con tutte le features connesse
+ * @param {number} numIndex
+ * @returns {object}
+ */
+function cardGenerator(numIndex) {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.classList.add("white");
+    card.innerHTML = `${numIndex}`;
+    return card;
+}
+
+
+/**
+ * Description: genera una serie di eventi al click del mouse
+ * @param {} 
  * @returns {?}
  */
-function clickAlertColor() {
-    this.classList.remove("bg-white");
+function clickAction() {
     this.classList.add("bg-green");
-    return alert(this.innerHTML);
+    alert(this.innerHTML);
 }
