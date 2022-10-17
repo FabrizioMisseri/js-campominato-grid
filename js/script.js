@@ -8,13 +8,24 @@ const container = document.querySelector(".container");
 
 let array = [];
 
+const diffMode = document.getElementById("difficulty-mode");
+
 const playBtn = document.getElementById("play-btn");
+
+
 
 playBtn.addEventListener("click", function() {
 
-    container.innerHTML = ("");
-
-    array = scoreBoard(100);
+    if (diffMode.value === "easy") {
+        container.innerHTML = ("");
+        array = scoreBoard(100);
+    } else if (diffMode.value === "normal") {
+        container.innerHTML = ("");
+        array = scoreBoard(81);
+    } else if (diffMode.value === "hard") {
+        container.innerHTML = ("");
+        array = scoreBoard(49);
+    }
 
 })
 
@@ -22,8 +33,6 @@ playBtn.addEventListener("click", function() {
 
 
 // FUNCTIONS
-
-
 
 /** SCOREBOARD
  * Description: genera un tabellone pieno di carte
