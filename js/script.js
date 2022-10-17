@@ -33,11 +33,23 @@ for (let i = 0; i < scoreBoardArray.length; i++) {
 
 //FUNCTIONS
 
+
+/**
+ * Description: restituisce un numero randomico tra un numero minimo e un numero massimo
+ * @param {number} min
+ * @param {number} max
+ * @returns {number}
+ */
 function rndNumbers (min,max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 
+/**
+ * Description: restituisce un array contenente numeri interi random da uno a MAX
+ * @param {number} maxNum
+ * @returns {object}
+ */
 function setOfRndNumbers(maxNum) {
     const numbersArray = [];
     while (numbersArray.length < maxNum) {
