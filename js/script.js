@@ -13,12 +13,19 @@ const scoreBoardArray = setOfRndNumbers(100);
 
 // ciclo for che scorre tutto l' array e genera le cards
 for (let i = 0; i < scoreBoardArray.length; i++) {
-    const card = document.createElement("div");
+    let card = document.createElement("div");
     card.classList.add("card");
+    card.classList.add("bg-white");
+    
+    card.addEventListener ("click", function() {
+        card.classList.remove("bg-white");
+        card.classList.add("bg-green");
+        alert(`${scoreBoardArray[i]}`);
+    })
+    
     container.append(card); 
     card.innerHTML = `${scoreBoardArray[i]}`;
 }  
-
 
 
 
